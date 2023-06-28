@@ -1,0 +1,394 @@
+$ciano: #66BEB7
+$verde: #BABD69
+$laranja: #F59C50
+$vermelho: #F04B48
+$marrom: #5A2524
+@mixin listaSemEstilo()
+    display: flex
+    gap: 20px
+    list-style: none
+@mixin FlexCenter()
+    display: flex
+    justify-content: center
+    align-items: center
+
+*
+    margin: 0
+    padding: 0
+    font-family: Arial, Helvetica, sans-serif
+    color: white
+
+@keyframes Menu 
+    0%
+        top: -200px
+    
+    100% 
+        top: 50px
+
+@keyframes background 
+    0%
+        background-position: top center
+    
+    100% 
+        background-position: center
+
+.vulcao
+    background: #270000 url(../img/hambuergures/vulcao.jpg) no-repeat center
+
+.oeste
+    background: #270000 url(../img/hambuergures/velho-oeste.jpg) no-repeat center
+    
+.tropical
+    background: #270000 url(../img/hambuergures/tropical.jpg) no-repeat center
+
+.aparecer
+    display: block !important
+    position: relative
+    
+    z-index: 2
+html
+    scroll-behavior: smooth
+
+a
+    text-decoration: none
+
+menu
+    display: none
+    cursor: pointer
+    div#navegacao
+        display: none
+        background-color: $marrom
+        padding: 50px 100px 100px
+        position: absolute
+        top: 50px
+        left: 50%
+        transform: translate(-50%)
+        width: 40vw
+        height: 30vh
+        z-index: 3
+        animation: Menu 1s 
+        #social
+            ul
+                display: flex
+                gap: 50px
+                justify-content: center
+        .nav
+            list-style: none
+            text-align: center
+            font-size: 2em
+            text-transform: uppercase
+            line-height: 50px
+            margin-bottom: 30px
+            li
+                a
+                    &:hover
+                        filter: invert(1)
+    
+
+body
+    background-color: $marrom
+
+    header
+        @include FlexCenter()
+        justify-content: space-around
+        background: #2b1111
+        box-shadow: 0px 5px 10px #00000036
+
+        h1
+            font-family: 'Fasthand', cursive
+
+        nav
+            display: flex
+            gap: 50px
+            align-items: center
+
+            ul
+                    @include listaSemEstilo()
+
+            div#InfImp
+
+                li
+                    display: flex
+                    align-items: center
+                    padding: 0px 10px 0px 0px
+                    transition: .3s
+
+                    &:hover
+                        background-color: black
+                        filter: invert(1)
+
+                    &:nth-child(1)::before
+                        content: url(../img/icons/desconto.png)
+                        margin: 5px
+
+                    &:nth-child(2)::before
+                        content: url(../img/icons/coupon.png)
+                        margin: 5px
+                        
+                    &:nth-child(3)::before
+                        content: url(../img/icons/menu.png)
+                        margin: 5px
+
+                    &:nth-child(4)::before
+                        content: url(../img/icons/sobre.png)
+                        margin: 5px
+
+            div#Social
+                
+                img
+                    width: 20px
+                    border: 2px solid white
+                    border-radius: 50%
+                    padding: 7px
+                    transition: 0.2s
+
+                    &:hover
+                        background-color: black
+                        filter: invert(1)
+    
+    article#carrossel
+        height: 90vh
+        position: relative
+        background-size: cover
+        background-attachment: fixed
+        animation: background 2s ease-in-out
+        
+        section
+            position: absolute
+            width: 30%
+            padding: 30px 50px
+            background-color: #000000ab
+            border-radius: 10px
+            display: none
+            top: 100px
+            right: 150px
+
+            h1
+                margin: 10px 0px
+                font-size: 2em
+            p
+                margin: 20px 0px
+                width: 90%
+                color: #eff86e
+                line-height: 1.5
+                font-size: 1.1em
+                        
+            button
+                width: 100%
+                background-color: $vermelho
+                padding: 20px 40px
+                border: none
+                border-radius: 35px
+                color: black
+                font-size: 1em
+                font-weight: 700
+                cursor: pointer
+                transition: .3s
+
+                &:hover
+                    color: white
+                    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.096)
+                
+        div#botoes
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            display: flex
+            justify-content: space-between
+            z-index: 1
+            button
+                background-color: #00000000
+                border: none
+                cursor: pointer
+            #voltar
+                transform: rotateZ(180deg)
+            img
+                width: 45px
+                filter: invert(1)
+    main
+        div#welcome
+            position: relative
+            top: -310px
+            svg
+                margin: -5px 0px
+            
+            article
+                @include FlexCenter()
+                justify-content: space-evenly
+                background-color: #ff5500
+
+                div#text
+                    width: 650px
+                    text-align: center
+                    
+                    h1
+                        font-size: 5em
+                        margin-bottom: 10px
+                    h2
+                        margin-bottom: 30px
+                        color: #910200
+                    p
+                        width: 70%
+                        line-height: 1.5
+                        font-size: 1.2em
+                        color: #fffb00de
+                        margin: auto
+                        text-shadow: 0px 0px 10px #00000049
+                img
+                    width: 600px
+                    transform: rotateZ(10deg)
+                    
+        article#topBurgers
+            position: relative
+            top: -450px
+            z-index: 5
+
+            h1#titulo
+                text-align: center
+                line-height: 80px
+                color: $verde
+                font: 5em 'Fasthand', cursive
+                text-decoration: underline
+
+            div#topBurguers
+                @include FlexCenter()
+                gap: 60px
+                flex-wrap: wrap-reverse
+                margin: 20px 0
+                position: relative
+                section.burguer
+                    width: 350px
+                    padding: 5px
+                    background-color: $vermelho
+                    box-shadow: 0px 0px 10px #00000050
+                    transition: .7s
+                    &:hover
+                        transform: scale(1.03)
+                    
+                    img
+                        width: 100% 
+                    div.descricao
+                        padding: 20px 10px 
+                        h1
+                            font-size: 2em
+                            margin-bottom: 10px
+                            color: yellow
+                        p
+                            &::before
+                                content: "Ingredientes: "
+                                color: #440000
+                                font-weight: 600
+        div#confCard
+            text-align: center
+            button
+                margin: 60px
+                padding: 20px
+                background: rgba(0, 0, 0, 0)
+                font-size: 1em
+                border: 1px solid white
+                text-transform: uppercase
+                border-radius: 40px
+                cursor: pointer
+                font-weight: 700
+                transition: .2s
+                &:hover
+                    background-color: #ffff
+                    color: black
+        
+        div#aval
+            position: relative
+            top: -700px
+            z-index: 4
+            svg
+                margin: -5px 0px
+            article
+                background-color: #db321f
+                padding: 80px
+                h1
+                    margin-bottom: 50px
+                    text-align: center
+                    color: #f7f324
+                    font: 5em 'Fasthand', cursive
+                    text-decoration: underline
+                    font-weight: 800
+                section
+                    display: flex
+                    gap: 60px
+                    justify-content: center
+                    flex-wrap: wrap-reverse
+                    div.userAval
+                        width: 280px
+                        padding: 30px
+                        background: #00000059
+                        text-align: center
+                        line-height: 1.5
+                        img
+                            width: 150px
+                            display: block
+                            margin: auto
+                            margin-bottom: 20px
+        article#cupom
+            height: 100vh
+            margin-top: -1000px
+            background: #000 url(../img/fundo.jpeg) no-repeat center
+            background-attachment: fixed
+            background-size: cover
+            @include FlexCenter()
+            flex-direction: column
+            gap: 70px
+            position: relative
+            h1
+                width: 50%
+                text-align: center
+                font-size: 2.5em
+                text-shadow: 0 0 10px black
+                text-transform: uppercase
+            button
+                background: $laranja
+                padding: 20px 40px
+                font-weight: 800
+                text-transform: uppercase
+                border: none
+                border-radius: 40px
+                cursor: pointer
+                text-shadow: 0 0 10px #00000057
+                &:hover
+                    opacity: .7
+    footer
+        @include FlexCenter()
+        justify-content: space-evenly
+        height: 35vh
+        padding-top: 60px
+        align-items: flex-start
+        text-align: center
+        section#social
+            ul
+                display: flex
+                li
+                    border: 2px solid white
+                    border-radius: 50%
+                    padding: 10px
+                    transition: 0.2s
+                    &:hover
+                        background-color: black
+                        filter: invert(1)
+                    a
+                        img
+                            width: 40px
+        section#endereco
+            line-height: 2
+            text-align: left
+        section
+            li
+                list-style: none
+                margin: 10px
+
+    div#contexto
+        background-color: white
+        padding: 10px
+        p
+            color: black
+            text-align: center
+            

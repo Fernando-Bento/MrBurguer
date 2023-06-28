@@ -1,0 +1,73 @@
+@media screen and (max-width: 1000px) {
+  menu {
+    display: block;
+  }
+  body header {
+    justify-content: space-between;
+    padding: 0 50px;
+  }
+  body header nav {
+    display: none !important;
+  }
+  article#carrossel {
+    height: 100vh !important;
+  }
+  article#carrossel section {
+    width: 60% !important;
+    top: 0px !important;
+    right: 50% !important;
+    transform: translate(50%);
+  }
+  article#carrossel div#botoes {
+    height: 50% !important;
+  }
+  main div#welcome article h1 {
+    font-size: 3.5em !important;
+    margin: 10px;
+  }
+  main div#welcome article img {
+    display: none;
+  }
+  main article#topBurgers {
+    top: -380px !important;
+  }
+  main article#topBurgers h1#titulo {
+    margin: 0 50px;
+  }
+  main article#topBurgers div#topBurguers section.burguer {
+    width: 300px !important;
+  }
+  main div#aval {
+    top: -450px !important;
+  }
+  main div#aval article section {
+    gap: 10px !important;
+  }
+  main article#cupom {
+    margin-top: -600px !important;
+  }
+  main article#cupom h1 {
+    width: 85% !important;
+  }
+  footer {
+    height: 25vh !important;
+    padding-top: 30px !important;
+  }
+  footer section#social {
+    display: none !important;
+  }
+  footer section#cardapio {
+    display: none;
+  }
+  footer section#endereco {
+    line-height: 1 !important;
+  }
+  div#contexto {
+    background-color: white;
+    padding: 10px;
+  }
+  div#contexto p {
+    color: black;
+    text-align: center;
+  }
+}/*# sourceMappingURL=MediaQuery.css.map */
